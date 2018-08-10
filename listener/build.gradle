@@ -1,0 +1,108 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.sssidshirodkar'
+
+project.ext {
+    supportLibraryVersion = "28.0.0-alpha3"
+    retrofitVersion = "2.4.0"
+    okHttpVersion = "3.11.0"
+}
+
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+//            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "com.android.support:appcompat-v7:$project.supportLibraryVersion"
+    implementation files('libs/cloud-android-sdk-1.5.7.3.jar')
+    implementation files('libs/aws-android-sdk-iot-2.6.27.jar')
+    implementation files('libs/aws-android-sdk-core-2.6.27.jar')
+
+    implementation files('libs/jackson-annotations-2.9.6.jar')
+    implementation files('libs/jackson-core-2.9.6.jar')
+    implementation files('libs/jackson-databind-2.9.6.jar')
+
+    implementation files('libs/retrofit-2.4.0.jar')
+    implementation files('libs/converter-gson-2.4.0.jar')
+    implementation files('libs/gson-2.8.5.jar')
+    implementation files('libs/logging-interceptor-3.11.0.jar')
+    implementation files('libs/okhttp-3.11.0.jar')
+    implementation files('libs/okio-1.15.0.jar')
+
+//    implementation files('libs/org.eclipse.paho.android.service-1.1.1.jar')
+//    implementation files('libs/org.eclipse.paho.client.mqttv3-1.1.1.jar')
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    implementation 'com.amazonaws:aws-android-sdk-iot:2.6.+'
+
+//    _______________________________________________________________________________________________
+
+//    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
+//    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+//
+//    implementation(
+//            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'],
+//            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.6'],
+//            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6']
+//    )
+//
+//    // Retrofit
+//    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+//    // GSON Converter
+//    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
+//    // OkHttp Logging Interceptor
+//    implementation "com.squareup.okhttp3:okhttp:$project.okHttpVersion"
+//    implementation "com.squareup.okhttp3:logging-interceptor:$project.okHttpVersion"
+
+
+//    implementation ('org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'){ transitive = true }
+//    implementation ('org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'){ transitive = true }
+//
+//    implementation(
+//            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'],
+//            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.6'],
+//            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6']
+//    )
+//
+//    // Retrofit
+//    implementation ('com.squareup.retrofit2:retrofit:2.4.0'){ transitive = true }
+//    // GSON Converter
+//    implementation ('com.squareup.retrofit2:converter-gson:2.4.0'){ transitive = true }
+//    // OkHttp Logging Interceptor
+//    implementation ('com.squareup.okhttp3:okhttp:3.11.0'){ transitive = true }
+//    implementation ('com.squareup.okhttp3:logging-interceptor:3.11.0'){ transitive = true }
+
+}
+
+//configurations {
+////    all*.exclude module: 'appcompat-v7'
+////    all*.exclude module: 'support-v4'
+//    all*.exclude module: 'retrofit2'
+//    all*.exclude module: 'okhttp3'
+//    all*.exclude module: 'com.google.gson'
+//}
