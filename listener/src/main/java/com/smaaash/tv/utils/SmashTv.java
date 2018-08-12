@@ -94,11 +94,7 @@ public class SmashTv implements TimerTasks.TaskListener, PubSubHelper.Communicat
         helper.globalSubscribe("global/" + userId);
     }
 
-    public interface SmaaashTvListener {
-        void onUrlReceivedEvent(String url);
 
-        void onResponseReceived(String response);
-    }
 
 //    public SmashTv(Activity context, String userId, WebView yourWebView, String defaultUrl) {
 //        this(context, userId, yourWebView);

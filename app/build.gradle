@@ -32,7 +32,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    //    implementation project(':listener')
-        implementation files('libs/listener-release.aar')
-//        implementation ('com.squareup.retrofit2:converter-gson:2.4.0')
+        implementation project(':listener')
+//        implementation files('libs/listener-release.aar')
+//    implementation 'com.google.code.gson:gson:2.8.5'
 }
+
+//configurations {
+////    all*.exclude module: 'appcompat-v7'
+////    all*.exclude module: 'support-v4'
+//    all*.exclude module: 'retrofit2'
+//    all*.exclude module: 'okhttp3'
+//    all*.exclude module: 'gson'
+//}

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import com.smaaash.tv.utils.SmaaashTvListener;
 import com.smaaash.tv.utils.SmashTv;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        smashTv = new SmashTv(this,"5b3491bcda8ac8794788ef21", web_view);
 
-        smashTv = new SmashTv(this, "5b3491bcda8ac8794788ef21", new SmashTv.SmaaashTvListener() {
+        smashTv = new SmashTv(this, "5b3491bcda8ac8794788ef21", new SmaaashTvListener() {
             @Override
             public void onUrlReceivedEvent(String url) {
                 Log.v(Tag, " URL RECEIVED ==>" + url);

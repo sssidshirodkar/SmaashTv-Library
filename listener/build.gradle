@@ -25,7 +25,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
 //            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -38,19 +38,20 @@ dependencies {
 
     implementation "com.android.support:appcompat-v7:$project.supportLibraryVersion"
     implementation files('libs/cloud-android-sdk-1.5.7.3.jar')
-    implementation files('libs/aws-android-sdk-iot-2.6.27.jar')
-    implementation files('libs/aws-android-sdk-core-2.6.27.jar')
 
-    implementation files('libs/jackson-annotations-2.9.6.jar')
-    implementation files('libs/jackson-core-2.9.6.jar')
-    implementation files('libs/jackson-databind-2.9.6.jar')
-
-    implementation files('libs/retrofit-2.4.0.jar')
-    implementation files('libs/converter-gson-2.4.0.jar')
-    implementation files('libs/gson-2.8.5.jar')
-    implementation files('libs/logging-interceptor-3.11.0.jar')
-    implementation files('libs/okhttp-3.11.0.jar')
-    implementation files('libs/okio-1.15.0.jar')
+//    implementation files('libs/aws-android-sdk-iot-2.6.27.jar')
+//    implementation files('libs/aws-android-sdk-core-2.6.27.jar')
+//
+//    implementation files('libs/jackson-annotations-2.9.6.jar')
+//    implementation files('libs/jackson-core-2.9.6.jar')
+//    implementation files('libs/jackson-databind-2.9.6.jar')
+//
+//    implementation files('libs/retrofit-2.4.0.jar')
+//    implementation files('libs/converter-gson-2.4.0.jar')
+//    implementation files('libs/gson-2.8.5.jar')
+//    implementation files('libs/logging-interceptor-3.11.0.jar')
+//    implementation files('libs/okhttp-3.11.0.jar')
+//    implementation files('libs/okio-1.15.0.jar')
 
 //    implementation files('libs/org.eclipse.paho.android.service-1.1.1.jar')
 //    implementation files('libs/org.eclipse.paho.client.mqttv3-1.1.1.jar')
@@ -58,31 +59,35 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-//    implementation 'com.amazonaws:aws-android-sdk-iot:2.6.+'
 
 //    _______________________________________________________________________________________________
 
 //    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
 //    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 //
-//    implementation(
-//            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'],
-//            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.6'],
-//            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6']
-//    )
-//
-//    // Retrofit
-//    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
-//    // GSON Converter
-//    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
-//    // OkHttp Logging Interceptor
-//    implementation "com.squareup.okhttp3:okhttp:$project.okHttpVersion"
-//    implementation "com.squareup.okhttp3:logging-interceptor:$project.okHttpVersion"
+    implementation 'com.amazonaws:aws-android-sdk-iot:2.6.+'
 
+    implementation(
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.6'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6']
+    )
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+    // GSON Converter
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
+    // OkHttp Logging Interceptor
+    implementation "com.squareup.okhttp3:okhttp:$project.okHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$project.okHttpVersion"
+
+
+
+//    implementation ('com.amazonaws:aws-android-sdk-iot:2.6.+'){transitive = true}
 
 //    implementation ('org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'){ transitive = true }
 //    implementation ('org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'){ transitive = true }
-//
+
 //    implementation(
 //            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'],
 //            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.6'],
@@ -99,10 +104,11 @@ dependencies {
 
 }
 
-//configurations {
-////    all*.exclude module: 'appcompat-v7'
-////    all*.exclude module: 'support-v4'
+configurations {
+//    all*.exclude module: 'appcompat-v7'
+//    all*.exclude module: 'support-v4'
 //    all*.exclude module: 'retrofit2'
 //    all*.exclude module: 'okhttp3'
-//    all*.exclude module: 'com.google.gson'
-//}
+//    all*.exclude module: 'gson'
+//    all*.exclude module: 'ACRCloudRecordThread'
+}
